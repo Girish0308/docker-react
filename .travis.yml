@@ -4,12 +4,11 @@ services:
 
 
 before_install:
-  - docker build -t girish0308/docker-react -f Dockerfile.dev .
+  - docker build -t girish0308/prodreact .
 
 
 script:
-  - docker run -e CI=true girish0308/docker-react npm run test -- --coverage
-
+  - docker run -e CI=true girish0308/prodreact 
 
 deploy:
   provider: elasticbeanstalk
