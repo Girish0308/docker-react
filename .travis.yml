@@ -6,7 +6,7 @@ before_install:
   - docker build -t girish0308/prodreact .
 
 script:
-  - docker run -e CI=true girish0308/prodreact 
+  - docker run -e CI=true girish0308/prodreact npm run test -- --coverage 
 
 deploy:
   provider: elasticbeanstalk
